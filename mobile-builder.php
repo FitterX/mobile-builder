@@ -30,6 +30,8 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'MOBILE_BUILDER_VERSION', '1.0.0' );
+define( 'MOBILE_BUILDER_APP_VERSION', '1.2.0' );
+define( 'MOBILE_BUILDER_JS_VERSION', '1.2.0' );
 
 /**
  * The code that runs during plugin activation.

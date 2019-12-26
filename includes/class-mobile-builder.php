@@ -159,8 +159,11 @@ class Mobile_Builder {
 
 		$plugin_admin = new Mobile_Builder_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		// Add the options page and menu item.
+		add_action( 'admin_menu', array( $plugin_admin, 'add_plugin_admin_menu' ) );
+
+		// Add plugin action link point to settings page
+		add_filter( 'plugin_action_links_' . $this->plugin_name . '/' . $this->plugin_name . '.php', array( $plugin_admin, 'add_plugin_action_links' ) );
 
 	}
 
